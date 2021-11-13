@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@index')->name('home');
+
+Route::get('contact', 'TicketsController@create')->name('ticket.create');
+Route::post('contact', 'TicketsController@store')->name('ticket.store');
+Route::get('reload-captcha', 'TicketsController@refreshCaptcha')->name('reload.captcha');
