@@ -7,7 +7,6 @@
                 <ul class="navbar-nav ml-auto">
                     {{-- <li class="nav-item active"><a href="#" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a></li> --}}
                     <li class="nav-item active">{!! Html::decode(link_to_route('home', 'home', array(), array('class'=>'nav-link text-uppercase font-weight-bold'))) !!}</li>
-                    <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">About</a></li>
                     <li class="nav-item">{!! Html::decode(link_to_route('ticket.create', 'contact', array(), array('class'=>'nav-link text-uppercase font-weight-bold'))) !!}</li>
                 </ul>
             </div>

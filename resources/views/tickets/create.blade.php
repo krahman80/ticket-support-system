@@ -8,11 +8,13 @@
                 <h5 class="card-title">Submit a new ticket</h5>
                 @include('layouts.msg')                
                 {!! Form::open(['route' => 'ticket.store']) !!}
-                    <fieldset>
+                    
                         <div class="form-group">
                             {!! Form::label('email', 'Email',['class'=>'control-label']); !!}
                             {!! Form::text('email', '', ['class'=>'form-control','id'=>'email', 'placeholder'=>'Email']); !!}
                         </div>
+                        <fieldset class="form-group border p-3">
+                            <legend class="w-auto px-2">Message</legend>
                         <div class="form-group">
                             {!! Form::label('title', 'Title',['class'=>'control-label']); !!}
                             {!! Form::text('title', '', ['class'=>'form-control','id'=>'title', 'placeholder'=>'Title']); !!}
