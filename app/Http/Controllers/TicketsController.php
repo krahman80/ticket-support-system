@@ -7,8 +7,7 @@ use App\Http\Requests\TicketFormRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Ticket;
 use Captcha;
-use App\Mail\ContactMessage;
-use Illuminate\Support\Facades\Mail;
+use App\Jobs\SendContactMessage;
 
 class TicketsController extends Controller
 {
@@ -33,8 +32,8 @@ class TicketsController extends Controller
         $ticket->save();
         
         // send email here
-        Mail::to('Tis-inbox@mailtrap.com')->send(new ContactMessage($slug));
-        
+        SendContactMessage::dispatch($slug);
+
         //return to view
         return redirect('contact')->with('status', 'Your ticket has been created! I\'ts unique id is: '.$slug);
         

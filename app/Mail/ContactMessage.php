@@ -31,7 +31,7 @@ class ContactMessage extends Mailable
     {
         // return $this->view('view.name');
         return $this->from('contact-page@tis.app')
-        ->subject($this->title)
+        ->subject('New Contact Message')
             ->markdown('emails.ticket')
             ->with([
                 'name' => 'Tis Admin',
