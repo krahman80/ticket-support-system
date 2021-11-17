@@ -8,5 +8,5 @@ class Ticket extends Model
 {
     //
     protected $fillable = ['email', 'title', 'content', 'slug', 'status'];
-
+    
 }

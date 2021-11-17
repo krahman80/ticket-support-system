@@ -8,8 +8,11 @@
 ## To Do list
 - captcha (done)
 - send email (done)
-- add queue for email
+- add queue for email (done)
+
+- list message for admin
+- view detail message for admin
+- update status message for admin
 - add auth for admin
 - add social login
-- crud for message
 - create comment for message

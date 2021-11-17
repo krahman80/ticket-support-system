@@ -28,9 +28,10 @@
                         <div class="form-group">
                             <div class="captcha">
                                 <span>{!! captcha_img() !!}</span>
-                                <button type="button" class="btn btn-danger" class="reload" id="reload">
+                                {{-- <button type="button" class="btn btn-danger" class="reload" id="reload">
                                     &#x21bb;
-                                </button>
+                                </button> --}}
+                                {!! Form::button('Submit!',['class'=>'btn btn-danger reload','id' => 'reload']); !!}
                             </div>
                         </div>
 

@@ -12,6 +12,19 @@ use App\Jobs\SendContactMessage;
 class TicketsController extends Controller
 {
     //
+    public function index() {
+        $tickets = Ticket::get();
+        return view('tickets.index',['tickets' => $tickets]);    
+    }
+
+    public function show($slug) {
+        // this return collection need to foreach in the view
+        // $ticket = Ticket::where('slug',$slug)->get();
+
+        $ticket = Ticket::where('slug',$slug)->firstOrFail();
+        return view('tickets.show', ['ticket' => $ticket]);
+    }
+
     public function create(){
         return view('tickets.create');
     }
@@ -42,6 +55,31 @@ class TicketsController extends Controller
         // <div class="alert alert-success"> {{ $status }}</div>
         // @endif
 
+    }
+
+    public function edit($slug){
+        $ticket = Ticket::where('slug',$slug)->first();
+        return view('tickets.edit',['ticket' => $ticket]);
+    }
+
+    public function update(Request $request, $slug) {
+        $ticket = Ticket::where('slug', $slug)->firstOrFail();
+        
+        if ($request->get('status') != null ){
+            $ticket->status = 1;
+        } else {
+            $ticket->status = 0;
+        }
+        $ticket->save();
+
+        // return redirect('ticket',['slug' => $ticket->slug])->with('status', 'update success');
+        return redirect()->action('TicketsController@edit', array('slug'=>$ticket->slug))->with('status', 'ticket updated');
+    }
+
+    public function destroy($slug) {
+        $ticket = Ticket::where('slug', $slug)->firstOrFail();
+        $ticket->delete();
+        return redirect('ticket')->with('status', 'The ticket '. $ticket->slug . ' has been deleted');
     }
 
     public function refreshCaptcha()
