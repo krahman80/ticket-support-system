@@ -10,12 +10,14 @@
             <p><span class="font-weight-bold">Status</span>: {{ $ticket->status ? 'Answered' : 'Pending'}}</p>
             <p>{{ $ticket->content }}</p>
             </div>
+                @auth
                 {!! Form::open(['route' => ['ticket.delete', $ticket->slug]]) !!}
                 {{ link_to_route('ticket.edit', 'edit', ['slug' => $ticket->slug], ['class'=> 'btn btn-info']) }}                
                 {!! Form::submit('delete', ['class' => 'btn btn-warning']) !!}
                 {{-- </div> --}}
                 {!! Form::close() !!}
                 {{-- <a href="#" class="btn btn-info">Delete</a> --}}
+                @endauth
             </div>
         </div>
     </div>

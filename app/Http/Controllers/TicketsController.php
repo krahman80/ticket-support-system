@@ -12,8 +12,12 @@ use App\Jobs\SendContactMessage;
 class TicketsController extends Controller
 {
     //
+    public function __construct(){
+        $this->middleware('auth')->except('create','show');
+    }
+
     public function index() {
-        $tickets = Ticket::get();
+        $tickets = Ticket::orderBy('id', 'desc')->paginate(10);
         return view('tickets.index',['tickets' => $tickets]);    
     }
 
@@ -44,9 +48,12 @@ class TicketsController extends Controller
             ));
         $ticket->save();
         
-        // send email here
+        // send email to notify admin
         SendContactMessage::dispatch($slug);
 
+        //send email to notify sender
+
+        
         //return to view
         return redirect('contact')->with('status', 'Your ticket has been created! I\'ts unique id is: '.$slug);
         

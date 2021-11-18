@@ -31,7 +31,7 @@
                                 {{-- <button type="button" class="btn btn-danger" class="reload" id="reload">
                                     &#x21bb;
                                 </button> --}}
-                                {!! Form::button('Submit!',['class'=>'btn btn-danger reload','id' => 'reload']); !!}
+                                {!! Form::button('Reload!',['class'=>'btn btn-danger reload','id' => 'reload']); !!}
                             </div>
                         </div>
 

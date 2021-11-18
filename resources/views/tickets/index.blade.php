@@ -2,7 +2,7 @@
 @section('title', 'Ticket')
 @section('content')
 <div class="row py-5">
-    <div class="col-lg-12 mx-auto">
+    <div class="col-lg-8 mx-auto">
         <div class="card shadow mb-4">
             <div class="card-body p-4">
             <h5 class="card-title">Ticket</h5>
@@ -31,7 +31,7 @@
                 </tbody>
             </table>
             @endif
-                    
+            {!! $tickets->links() !!}       
         </div>
     </div>
     </div>
