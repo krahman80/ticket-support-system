@@ -1,18 +1,21 @@
-## Support Ticket App
+# Support Ticket App
 
-- [laravel 7.29](https://laravel.com).
+> using [laravel 7.29](https://laravel.com)
 
-- **[test](https://test.com/)**
+### Feature
+- captcha
+- send email
+- email queue job
+- authenticate
 
+### To Do list
 
-## To Do list
 - captcha (done)
 - send email (done)
 - add queue for email (done)
-
-- list message for admin
-- view detail message for admin
-- update status message for admin
+- list message for admin (done)
+- view detail message for admin (done)
+- update status message for admin (done)
 - add auth for admin
 - add social login
-- create comment for message
+- add unit test
