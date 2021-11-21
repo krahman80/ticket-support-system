@@ -8,12 +8,13 @@ use Illuminate\Support\Facades\Auth;
 use App\Ticket;
 use Captcha;
 use App\Jobs\SendContactMessage;
+use App\Jobs\SendUserContactMessage;
 
 class TicketsController extends Controller
 {
     //
     public function __construct(){
-        $this->middleware('auth')->except('create','show');
+        $this->middleware('auth')->except('create','show','store');
     }
 
     public function index() {
@@ -52,7 +53,7 @@ class TicketsController extends Controller
         SendContactMessage::dispatch($slug);
 
         //send email to notify sender
-
+        SendUserContactMessage::dispatch($slug, $request->get('email'));
         
         //return to view
         return redirect('contact')->with('status', 'Your ticket has been created! I\'ts unique id is: '.$slug);
@@ -80,7 +81,7 @@ class TicketsController extends Controller
         $ticket->save();
 
         // return redirect('ticket',['slug' => $ticket->slug])->with('status', 'update success');
-        return redirect()->action('TicketsController@edit', array('slug'=>$ticket->slug))->with('status', 'ticket updated');
+        return redirect()->action('TicketsController@show', array('slug'=>$ticket->slug))->with('status', 'ticket updated');
     }
 
     public function destroy($slug) {

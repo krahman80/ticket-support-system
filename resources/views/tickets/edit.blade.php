@@ -7,7 +7,6 @@
             <div class="card-body p-4">
                 <h5 class="card-title">Edit ticket</h5>
                 @include('layouts.msg')
-
                 {!! Form::model($ticket,['method' => 'put', 'route' => ['ticket.update', $ticket->slug]]) !!}
                 <div class="form-group">
                         {!! Form::hidden('slug', $ticket->slug) !!}
