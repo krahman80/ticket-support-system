@@ -2,11 +2,12 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center py-5">
-        <div class="col-md-8 mx-auto">
-            <div class="card shadow mb-4">
-                <div class="card-body p-4">
-                    <h5 class="card-title">{{ __('Login') }}</h5>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Login') }}</div>
+
+                <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

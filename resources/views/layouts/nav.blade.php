@@ -15,7 +15,7 @@
                     @auth
                     <li class="nav-item">{!! Html::decode(link_to_route('ticket.index', 'ticket', array(), array('class'=>'nav-link text-uppercase font-weight-bold'))) !!}</li>
                     @endauth
-                    <li class="nav-item">{!! Html::decode(link_to_route('ticket.create', 'contact', array(), array('class'=>'nav-link text-uppercase font-weight-bold'))) !!}</li>
+                    {{-- <li class="nav-item">{!! Html::decode(link_to_route('ticket.create', 'contact', array(), array('class'=>'nav-link text-uppercase font-weight-bold'))) !!}</li> --}}
                     @guest
                     <li class="nav-item">
                         <a class="nav-link text-uppercase font-weight-bold" href="{{ route('login') }}">{{ __('Login') }}</a>
