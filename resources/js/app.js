@@ -21,8 +21,10 @@ window.Vue = require('vue');
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
+Vue.component('captcha-component', require('./components/Captcha.vue').default);
+
 // import example from './components/ExampleComponent.vue';
-import captcha from './components/Captcha.vue';
+// import captcha from './components/Captcha.vue';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -31,9 +33,5 @@ import captcha from './components/Captcha.vue';
  */
 
 const app = new Vue({
-    el: '#app',
-    components: {
-        // 'example': example,
-        'captcha': captcha
-      }
+    el: '#app'
 });

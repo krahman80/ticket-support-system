@@ -14,7 +14,7 @@ class TicketsController extends Controller
 {
     //
     public function __construct(){
-        $this->middleware('auth')->except('create','show','store');
+        $this->middleware('auth')->except('create','show','store', 'refreshCaptcha');
     }
 
     public function index() {

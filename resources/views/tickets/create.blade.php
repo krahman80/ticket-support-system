@@ -27,7 +27,7 @@
 
                             <div class="form-group">
                                 <div class="captcha">
-                                    <span>{!! captcha_img() !!}</span>
+                                    <span id="recaptcha">{!! captcha_img() !!}</span>
                                     {{-- <button type="button" class="btn btn-danger" class="reload" id="reload">
                                         &#x21bb;
                                     </button> --}}
@@ -49,6 +49,6 @@
             </div>                
         </div>
     </div>
-    <captcha></captcha>
+    <captcha-component recaptcha-route="{{ route('reload.captcha') }}"></captcha-component>
 </div>
 @endsection
