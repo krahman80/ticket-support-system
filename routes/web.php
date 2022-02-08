@@ -17,6 +17,6 @@ Route::get('/reload-captcha', 'TicketsController@refreshCaptcha')->name('reload.
 
 Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);
 
-Route::get('/info', function() {
-phpinfo();
-});
+// Route::get('/info', function() {
+// phpinfo();
+// });
