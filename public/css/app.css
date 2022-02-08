@@ -68,7 +68,7 @@ body {
   margin: 0;
   font-family: "Nunito", sans-serif;
   font-size: 0.9rem;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 1.6;
   color: #212529;
   text-align: left;
@@ -4530,13 +4530,12 @@ input[type=button].btn-block {
 }
 
 .navbar {
-  /* position: relative;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem; */
-  transition: all 0.4s;
+  padding: 0.5rem 1rem;
 }
 
 .navbar .container,
@@ -4559,13 +4558,11 @@ input[type=button].btn-block {
   font-size: 1.125rem;
   line-height: inherit;
   white-space: nowrap;
-  color: #fff;
 }
 
 .navbar-brand:hover,
 .navbar-brand:focus {
   text-decoration: none;
-  color: #fff;
 }
 
 .navbar-nav {
@@ -4579,7 +4576,6 @@ input[type=button].btn-block {
 .navbar-nav .nav-link {
   padding-right: 0;
   padding-left: 0;
-  color: #fff;
 }
 
 .navbar-nav .dropdown-menu {
