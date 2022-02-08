@@ -21,6 +21,7 @@
 - add email notification 
   with slug to user ----------------------> (ok)
 - add unit test --------------------------> (ok)
+- add throtlle to contact create ---------> (not)
 
 ### phpunit Test item list
 

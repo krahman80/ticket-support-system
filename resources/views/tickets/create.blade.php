@@ -49,6 +49,6 @@
             </div>                
         </div>
     </div>
-    <captcha-component recaptcha-route="{{ route('reload.captcha') }}"></captcha-component>
+    <captcha-component recaptcha="{{ route('reload.captcha') }}"></captcha-component>
 </div>
 @endsection
